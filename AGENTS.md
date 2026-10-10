@@ -20,6 +20,7 @@ reCAPTCHA verification Django module — distribution `entirius-django-captcha`,
 - Never rename the package / Django app_label / DB table prefix `django_captcha` — it is a schema contract.
 - Migrations are part of the public contract — never edit an already released migration.
 - Default: do not commit — git is the user's call.
+- No AI attribution in commits or PR descriptions.
 
 ## Architecture
 
@@ -30,3 +31,11 @@ reCAPTCHA verification Django module — distribution `entirius-django-captcha`,
   no active service configured = pass-through.
 - `settings.py` — host-project overrides with defaults: `CAPTCHA_TOKEN_HEADER_NAME`
   (`X-Recaptcha-Token`), `CAPTCHA_URL` (Google siteverify), `API_BASE_URL`.
+- `urls.py` — mounts an empty route list under `{API_BASE_URL}/captcha/<version>/<channel_idx>/`; the module
+  exposes no endpoint of its own.
+
+| Topic | Where |
+|---|---|
+| Decorator and service lookup | `src/django_captcha/output/decorators.py` |
+| `Service` model and scopes | `src/django_captcha/models/service.py` |
+| Settings and defaults | `src/django_captcha/settings.py` |

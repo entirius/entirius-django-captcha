@@ -1,7 +1,21 @@
 [project]
 name = "entirius-django-captcha"
 version = "2.0.0"
-description = "reCAPTCHA verification Django module"
+description = "reCAPTCHA verification for Entirius: a view decorator backed by per-channel service configuration"
+keywords = ["django", "recaptcha", "captcha", "security", "ecommerce", "entirius"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Framework :: Django",
+    "Framework :: Django :: 5.2",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Security",
+]
 authors = [{ name = "Entirius" }]
 readme = "README.md"
 requires-python = ">=3.11"
@@ -17,7 +31,11 @@ dev  = ["ruff", "pre-commit"]
 test = ["pytest", "pytest-django"]
 
 [project.urls]
+Homepage = "https://docs.entirius.com/"
+Documentation = "https://docs.entirius.com/"
 Repository = "https://github.com/entirius/entirius-django-captcha"
+Changelog = "https://github.com/entirius/entirius-django-captcha/releases"
+Issues = "https://github.com/entirius/entirius-django-captcha/issues"
 
 [build-system]
 requires = ["hatchling"]
